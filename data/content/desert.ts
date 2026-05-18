@@ -1,0 +1,197 @@
+import type { Article, QuizQuestion } from '../types'
+
+export const desertArticles: Article[] = [
+    {
+        id: 'desert-heat',
+        categoryId: 'desert',
+        title: 'Extreme Heat & Dehydration in Colorado Canyon Country',
+        summary: 'Southwest Colorado\'s canyon country (San Juan Mountains, Black Canyon, Mesa Verde area) sees temperatures above 100°F. Dehydration and heat stroke can kill in hours.',
+        difficulty: 'beginner',
+        threatLevel: 'critical',
+        timeToRead: 6,
+        isPremium: false,
+        steps: [
+            { order: 1, action: 'Recognize heat exhaustion vs heat stroke', detail: 'Heat Exhaustion: heavy sweating, weakness, cool/pale/moist skin, nausea, fainting. Heat Stroke: high body temperature (>103°F), hot/red/DRY skin, rapid pulse, unconsciousness. Heat stroke is an immediate life emergency.' },
+            { order: 2, action: 'Heat stroke: cool the person immediately', detail: 'Move to shade. Remove clothing. Apply cool water to skin. Fan aggressively. Pack ice (if available) in armpits, groin, neck. Heat stroke can cause organ failure within minutes. Call 911.', warning: 'Heat stroke is a life emergency. Do NOT wait for improvement. Cool and evacuate simultaneously.' },
+            { order: 3, action: 'Drink 1 liter of water per hour in extreme heat', detail: 'At 100°F with exertion, you lose water faster than most people realize. Plan 1 liter per hour for strenuous desert hiking. Always carry more water than you think you need.' },
+            { order: 4, action: 'Hike early and late — rest midday', detail: 'Desert heat is deadliest between 10 AM and 4 PM. Hike before 9 AM or after 5 PM. Rest in shade during peak heat — this is not optional in 100°F+ temperatures.' },
+            { order: 5, action: 'If water runs out — shade, stillness, signaling', detail: 'Walking in extreme heat without water depletes you in hours. Stop, find or create shade, minimize movement, signal for help. Conserving what fluid you have remaining extends survival time.' },
+        ],
+        tips: [
+            'Electrolytes matter as much as water — drink too much water without salt causes hyponatremia (water intoxication)',
+            'Light-colored, loose, long-sleeved clothing keeps you COOLER than bare skin in desert sun',
+            'Canyons can have springs and seeps — look for green vegetation in cliff faces',
+        ],
+        faqItems: [
+            {
+                id: 'faq-desert-1',
+                question: 'Should I ration water if I run low in the desert?',
+                answer: 'No — this is a myth that kills people. Rationing water while exerting yourself in extreme heat depletes you faster than you think. Your body needs water to cool itself through sweating. Drink what you have, find shade, stop moving, and signal for rescue immediately when you realize you have less than a half day of water remaining.',
+                categoryId: 'desert',
+                tags: ['water', 'dehydration', 'rationing', 'myth'],
+            },
+        ],
+        relatedIds: ['floods-flash-flood'],
+    },
+    {
+        id: 'desert-water',
+        categoryId: 'desert',
+        title: 'Finding Water in Colorado High Desert & Canyon Country',
+        summary: 'Colorado\'s canyon country has water if you know where to look. The desert kills through dehydration but quickly through overexertion searching for water you don\'t know how to find.',
+        difficulty: 'intermediate',
+        threatLevel: 'critical',
+        timeToRead: 7,
+        isPremium: false,
+        steps: [
+            { order: 1, action: 'Read vegetation to find water', detail: 'Green vegetation in brown landscape signals subsurface water: cottonwood trees follow water tables closely; willows grow within 20 ft of water; bright green grass patches in canyon walls indicate seeps. Walk toward any anomalously green vegetation in dry terrain.' },
+            { order: 2, action: 'Follow drainages downhill', detail: 'All water flows to canyon bottoms. In Colorado canyon country, walking down any drainage will eventually reach water. Look for rock pools (tinajas) in canyon bottoms after any recent rain — these hold water for days to weeks.' },
+            { order: 3, action: 'Find seeps in canyon walls', detail: 'Look for dark moisture stains, moss, maidenhair fern, or green algae on canyon walls. Seeps emerge where porous sandstone meets impermeable rock. Hold a container against the seep or dig a small depression at its base. Seep water may flow as little as 1 cup per hour but can mean the difference between life and death.' },
+            { order: 4, action: 'Dig in dry creek beds', detail: 'Dig in the outside bend of a dry creek where sediment accumulates. Dig 1–2 feet in the lowest, darkest area. Water may seep in within 30 minutes if subsurface moisture exists.' },
+            { order: 5, action: 'Purify all found desert water', detail: 'Desert water — especially tinaja pools — is concentrated with Cryptosporidium, Giardia, and bacteria from animal use. Boil (1 minute) or use a quality filter. Cryptosporidium requires boiling or UV — standard iodine tablets do NOT kill it reliably.', warning: 'Tinaja water is often contaminated from animal carcasses. Filter AND boil or use UV purification.' },
+        ],
+        tips: [
+            'Collect morning dew by dragging a cloth over rocks and vegetation before 8 AM — can yield meaningful amounts',
+            'Plan water sources before departure using topo maps and the Water Report resource for canyoneering',
+            'Carry minimum 6 liters when departing a water source in summer canyon country — distances are often longer than maps suggest',
+        ],
+        warnings: [
+            'Solar stills in Colorado desert conditions yield almost no water and cost significant energy — use only as absolute last resort',
+            'Never drink from cattle water tanks without purification — they contain extremely high bacteria and agricultural chemicals',
+        ],
+        faqItems: [
+            {
+                id: 'faq-desert-water-1',
+                question: 'Is it safe to drink from a Colorado desert spring?',
+                answer: 'Springs are generally cleaner than standing water but should still be filtered or purified. Springs in cattle-grazing areas carry Cryptosporidium and Giardia. Springs near mine sites can contain heavy metals. Boil or use a quality ceramic filter for all backcountry water regardless of how clear it looks.',
+                categoryId: 'desert',
+                tags: ['water', 'spring', 'purification', 'desert'],
+            },
+        ],
+        relatedIds: ['desert-heat', 'floods-flash-flood'],
+    },
+    {
+        id: 'desert-navigation',
+        categoryId: 'desert',
+        title: 'Navigation in Colorado\'s Canyon Country',
+        summary: 'Canyon country is one of the most disorienting environments on earth. Identical-looking sandstone walls stretch for miles. Canyons that appear to connect dead-end. Navigation requires specific techniques.',
+        difficulty: 'intermediate',
+        threatLevel: 'high',
+        timeToRead: 6,
+        isPremium: false,
+        steps: [
+            { order: 1, action: 'Download offline maps BEFORE entering the canyon', detail: 'Cell service does not exist in most Colorado canyon country. Download topo maps offline in Gaia GPS, AllTrails, or CalTopo before your trip. Do this at home, not at the trailhead.' },
+            { order: 2, action: 'Navigate rim-to-canyon, not canyon-to-canyon', detail: 'In slot canyon country, navigation on the canyon floor is disorienting. Navigate on the rim where you can see landmarks, then descend to your target. Keep track of which drainage you descended and how to return.' },
+            { order: 3, action: 'Set GPS waypoints at every junction', detail: 'Canyon junctions look identical on the ground. Set a waypoint every time you enter a new drainage, cross a wash, or change direction significantly. These become your breadcrumb trail out.' },
+            { order: 4, action: 'Navigate by sun and shadow when GPS fails', detail: 'Sun rises east, sets west. At noon, shadows point north. Memorize your general direction of travel from the trailhead and use shadow direction to maintain it when canyons curve and eliminate your sense of direction.' },
+            { order: 5, action: 'Scout ahead for pour-offs and drop-offs', detail: 'Canyon terrain has pour-offs — vertical drops that appear suddenly and block return travel. Always scout ahead before committing to a canyon descent. Carry 30–50 ft of 7mm cord for rappelling. A pour-off that blocks return traps you in the canyon.' },
+        ],
+        tips: [
+            'Photograph key navigation features as you enter — they look completely different from the return direction',
+            'Tell someone your specific planned route including canyon names before entering remote canyons',
+            'In Colorado canyon country, Ancestral Puebloan sites near water sources are common — they knew where the water was',
+        ],
+        warnings: [
+            'Never enter a slot canyon during any weather with rain forecast anywhere in the watershed — see floods-terrain',
+            'Canyon country in Colorado (Dolores River, Black Canyon) has extremely limited rescue access — self-rescue is often the only realistic option',
+        ],
+        faqItems: [
+            {
+                id: 'faq-desert-nav-1',
+                question: 'What if my GPS dies in a remote canyon?',
+                answer: 'Navigate out using the sun, your last known waypoints from memory, and terrain features. All drainages flow eventually to major rivers. Following any drainage downstream will ultimately lead to civilization, though distances can be extreme. If you can reach high ground, cell service may be available to call for help.',
+                categoryId: 'desert',
+                tags: ['navigation', 'GPS', 'canyon', 'lost'],
+            },
+        ],
+        relatedIds: ['desert-heat', 'desert-water', 'forests-navigation'],
+    },
+    {
+        id: 'desert-shelter',
+        categoryId: 'desert',
+        title: 'Desert Shade, Shelter & Thermal Management',
+        summary: 'In extreme heat, finding or creating shade can be as life-saving as finding water. The physics of desert heat management are counterintuitive — understanding them keeps you alive.',
+        difficulty: 'beginner',
+        threatLevel: 'high',
+        timeToRead: 5,
+        isPremium: false,
+        steps: [
+            { order: 1, action: 'Maximize shade during peak heat (10 AM–4 PM)', detail: 'Any shade is better than direct sun. North-facing canyon walls provide permanent shade. Rock overhangs. The shaded side of large boulders. Once you find shade, stay until 4 PM minimum — each hour of midday hiking costs more water than an hour of shade rest.' },
+            { order: 2, action: 'Create shade with available materials', detail: 'A tarp or emergency blanket propped at an angle creates meaningful shade. A space blanket with reflective side OUT reflects solar radiation effectively. Even a backpack propped to shade your head reduces heat exposure significantly.' },
+            { order: 3, action: 'Manage ground temperature', detail: 'Desert ground in direct sun reaches 150–160°F. Never sit or lie directly on sun-exposed ground. Elevate yourself on rocks, a pack, or anything creating air circulation below you. Even 4 inches of air gap dramatically reduces conducted heat.' },
+            { order: 4, action: 'Cool the body efficiently', detail: 'Wet cloth on the head and neck cools through evaporation. Pour small amounts of water on your wrists and neck — in extreme heat this can be more efficient than drinking it. Fan yourself to increase evaporation. A wet bandana on the back of the neck targets high blood-flow areas.' },
+            { order: 5, action: 'Night travel when water is critically low', detail: 'In life-threatening situations with minimal water, travel at night when temperatures drop 30–50°F and water loss per mile drops dramatically. Navigate using stars (Polaris for north) or compass. Rest during the day in best available shade.' },
+        ],
+        tips: [
+            'Loose, light-colored, long-sleeved clothing keeps you cooler than bare skin by reflecting radiation and slowing evaporation',
+            'In extreme heat, eating increases metabolic heat — skip food if water is scarce and rest in shade',
+            'A mylar emergency blanket costs $2 and provides critical shade in a desert emergency',
+        ],
+        warnings: [
+            'Never remove clothing in extreme desert heat hoping to stay cooler — clothing slows water loss and protects against solar radiation',
+            'A car interior in direct desert sun reaches lethal temperatures within 15 minutes — never leave animals or children inside',
+        ],
+        faqItems: [
+            {
+                id: 'faq-desert-shelter-1',
+                question: 'How long can I survive in the Colorado desert without water?',
+                answer: 'At 100°F with exertion, a healthy adult can become dangerously dehydrated in 4–6 hours and may lose consciousness in 12–18 hours. At rest in shade, survival extends to 1–2 days. Find shade, stop moving, and signal for help immediately when water becomes critically low.',
+                categoryId: 'desert',
+                tags: ['dehydration', 'survival time', 'heat', 'shelter'],
+            },
+        ],
+        relatedIds: ['desert-heat', 'desert-water', 'desert-navigation'],
+    },
+    {
+        id: 'desert-canyon',
+        categoryId: 'desert',
+        title: 'Flash Flood Escape in Slot Canyons',
+        summary: 'Slot canyons are among the most dangerous terrain for flash floods — vertical walls, no escape routes, and floods arriving from 20+ miles away under clear sky. This premium guide covers specific escape and survival techniques.',
+        difficulty: 'advanced',
+        threatLevel: 'critical',
+        timeToRead: 9,
+        isPremium: true,
+        steps: [
+            { order: 1, action: 'Pre-entry weather check: entire watershed, not just local', detail: 'Check weather radar for the complete upstream watershed. For Colorado canyon systems, the watershed may cover 50–100+ square miles. If any significant precipitation is forecast anywhere in the watershed, do not enter. This is non-negotiable.' },
+            { order: 2, action: 'Read flood level evidence inside the canyon', detail: 'Canyon walls show past flood levels: polished water-worn rock lines, debris caught in crack systems, organic material in crevices. If these marks are at head level or above, the flood potential dwarfs your survival options. Assess before committing deep into the canyon.' },
+            { order: 3, action: 'Identify escape routes every 50 meters', detail: 'Continuously identify: where could I climb if water appears? Every section of climbable wall, every widening, every side pocket above flood level becomes your mental map. In slots with no escape options, your only strategy is prevention — do not be there.' },
+            { order: 4, action: 'At first sign of flood: climb immediately, no hesitation', detail: 'Warning signs: rumbling or roaring from upstream (may start faint). Sudden water level change in any existing stream. Smell of disturbed earth and vegetation. Debris floating downstream. Act on the first sign. The seconds you spend doubting are the seconds you needed to climb.' },
+            { order: 5, action: 'Climb using whatever is available', detail: 'Stemming (pushing against opposite walls with hands and feet). Crack systems. Wedged debris. The first flood wave may arrive as a churning wall of water, logs, and boulders at 15–20 mph. Get above it by any means.', warning: 'There is no swimming a flash flood wave in a slot canyon. The hydraulic forces are instantly fatal. Avoidance is the only strategy.' },
+            { order: 6, action: 'After the wave: stay elevated, wait for water to drop', detail: 'Initial flash floods are followed by sustained high water for hours. Do not descend before water has clearly dropped and stabilized. The debris field is extremely hazardous — sharp objects, unstable log jams, quicksand-like sediment. Signal for rescue from your elevated position.' },
+        ],
+        tips: [
+            'Most Colorado slot canyon deaths occur when people heard warning signs but decided to wait and see — never wait',
+            'A 30-ft piece of 7mm cord weighs 4 oz and can be tied as an anchor to wait out a flood above the waterline',
+        ],
+        warnings: [
+            'Cell and satellite service do not exist in most deep slot canyons — no rescue is possible once trapped. Prevention is everything.',
+            'Permits for popular slot canyons are limited specifically to manage flash flood risk on favorable weather days — if a ranger says conditions are unsafe, believe them',
+        ],
+        faqItems: [
+            {
+                id: 'faq-desert-canyon-1',
+                question: 'Is it safe to enter a slot canyon on a sunny day?',
+                answer: 'Only if the weather for the entire upstream watershed is clear with no precipitation forecast. Many slot canyon fatalities occurred on perfectly sunny days at the canyon location while thunderstorms occurred 50+ miles upstream. Check regional radar, not just local forecast. When uncertain, do not enter.',
+                categoryId: 'desert',
+                tags: ['slot canyon', 'flash flood', 'weather', 'safety'],
+            },
+        ],
+        relatedIds: ['floods-flash-flood', 'floods-terrain', 'desert-navigation'],
+    },
+]
+
+export const desertQuiz: QuizQuestion[] = [
+    {
+        id: 'quiz-desert-1',
+        categoryId: 'desert',
+        question: 'A hiker in Colorado\'s canyon country has hot, DRY, red skin and is becoming confused. Temperature is 104°F. What is happening and what do you do?',
+        options: [
+            'Mild heat exhaustion — have them sit and drink water',
+            'Heat stroke — cool immediately with any available water, fan aggressively, call 911. This is a life emergency.',
+            'Sunburn — move to shade and apply sunscreen',
+            'Dehydration — give them sports drinks and rest for an hour',
+        ],
+        correctIndex: 1,
+        explanation: 'Hot, DRY skin (not sweating) plus confusion signals heat stroke — the body\'s cooling system has failed. Core temperature above 104°F causes organ damage. Cool the person immediately by any means available: pour water over them, fan aggressively, apply ice to armpits and groin. Heat stroke kills in minutes without cooling. Call 911 while cooling.',
+        difficulty: 'beginner',
+    },
+]

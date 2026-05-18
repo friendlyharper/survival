@@ -1,0 +1,197 @@
+import type { Article, QuizQuestion } from '../types'
+
+export const urbanArticles: Article[] = [
+    {
+        id: 'urban-emergency',
+        categoryId: 'urban',
+        title: 'Urban Emergency Preparedness — Colorado Cities',
+        summary: 'Denver and Colorado\'s Front Range cities face earthquake risk, wildfire smoke, extended power outages, and flash floods. Every household needs a 72-hour minimum preparedness kit.',
+        difficulty: 'beginner',
+        threatLevel: 'high',
+        timeToRead: 7,
+        isPremium: false,
+        steps: [
+            { order: 1, action: 'Build a 72-hour emergency kit (minimum)', detail: 'Water: 1 gallon per person per day (3-day minimum). Food: non-perishable for 3 days. Medications: 7-day supply. First aid kit. Flashlight + batteries. Battery/hand-crank radio. Phone charger + power bank. Cash in small bills. Documents (IDs, insurance) in waterproof bag.' },
+            { order: 2, action: 'Have an evacuation plan before you need one', detail: 'Identify two routes out of your neighborhood. Know your local emergency shelter locations (Denver OEM website). Establish a family meeting point. Have an out-of-state contact everyone can call.' },
+            { order: 3, action: 'Earthquake: Drop, Cover, Hold On', detail: 'Drop to hands and knees. Take cover under sturdy desk or table, or against interior wall away from windows. Hold on. Do NOT run outside — most injuries occur from falling debris while trying to flee. After shaking stops, exit carefully watching for hazards.' },
+            { order: 4, action: 'Wildfire smoke: indoor air quality', detail: 'Colorado wildfire smoke can make outdoor air hazardous. Stay indoors, close windows and doors, run AC on recirculate, use N95 masks if you must go out. Air purifiers with HEPA filters significantly reduce indoor particulate levels.' },
+            { order: 5, action: 'Power outage: food safety protocol', detail: 'Refrigerator safe for 4 hours with door closed. Freezer safe for 24–48 hours (48 if full). Use a thermometer. Food safety temperature danger zone: 40–140°F. When in doubt, throw it out.' },
+        ],
+        tips: [
+            'Denver Rescue Mission and Red Cross emergency shelters are free and do not require ID',
+            'Colorado\'s most likely urban emergency is wildfire smoke, not earthquake',
+            'A battery-powered NOAA radio works when cell service and internet are both down',
+        ],
+        faqItems: [
+            {
+                id: 'faq-urban-1',
+                question: 'Should I run outside during an earthquake?',
+                answer: 'No — most earthquake injuries occur in the doorway or while running outside from falling debris, glass, and structural collapse. Drop, Cover, Hold On under a sturdy table or against an interior wall. Wait until shaking stops, then exit carefully, watching for damage. The "stand in a doorway" myth is outdated — modern doorways are no stronger than any other part of the structure.',
+                categoryId: 'urban',
+                tags: ['earthquake', 'doorway', 'drop cover hold', 'myths'],
+            },
+        ],
+        relatedIds: ['zombie-grid-down', 'plains-tornado'],
+    },
+    {
+        id: 'urban-medical',
+        categoryId: 'urban',
+        title: 'Trauma First Aid When EMS Cannot Respond',
+        summary: 'In a major urban emergency, EMS response times can exceed 30 minutes or be unavailable entirely. Knowing how to control life-threatening bleeding in the first 10 minutes saves lives — this is what "Stop the Bleed" means.',
+        difficulty: 'intermediate',
+        threatLevel: 'critical',
+        timeToRead: 8,
+        isPremium: false,
+        steps: [
+            { order: 1, action: 'Stop massive bleeding — this is the first priority', detail: 'Life-threatening bleeding from an extremity: apply a commercial tourniquet (CAT or SOFTT-W) 2–3 inches above the wound. Tighten until bleeding stops completely. Note the time written on the tourniquet. Do not remove it. If no tourniquet: pack the wound tightly with clean cloth and apply direct pressure — hard, sustained, unrelenting for 10 minutes minimum.' },
+            { order: 2, action: 'Wound packing for junctional bleeding (groin, armpit, neck)', detail: 'Wounds where a tourniquet cannot be applied: pack the wound forcefully with gauze, using a finger to pack deep into the wound channel. Apply direct pressure with both hands. For neck wounds: direct pressure only — no circumferential pressure. These wounds can bleed out in 3–5 minutes.', warning: 'Junctional wounds (groin, armpit, neck) are among the most rapidly fatal — pack and hold without hesitation.' },
+            { order: 3, action: 'Seal penetrating chest wounds', detail: 'A penetrating chest wound can cause a tension pneumothorax (collapsed lung) fatal within minutes. Seal with a commercial chest seal or improvised airtight cover (plastic wrapper taped on three sides). If breathing worsens after sealing, release the seal briefly.' },
+            { order: 4, action: 'Manage unconscious casualties', detail: 'Not breathing: begin CPR (30 compressions : 2 breaths). Breathing but unconscious: recovery position (on their side). Check airway for blood, debris, vomit. Never leave an unconscious person on their back unattended.' },
+            { order: 5, action: 'Treat shock aggressively', detail: 'Signs: pale, cool, clammy skin; rapid weak pulse; confusion; rapid breathing. Lay flat, elevate legs 12 inches unless spinal injury suspected. Keep warm with blankets. Shock from blood loss requires IV fluids and surgery — field treatment is supportive only. Get to a hospital.' },
+        ],
+        tips: [
+            'A Stop the Bleed kit (tourniquet + gauze + gloves) costs $30 and should be in every Colorado home and car',
+            'Take a Stop the Bleed course — 15 minutes of training dramatically improves outcomes in the first 10 minutes of trauma',
+            'Commercially available QuikClot or Celox hemostatic gauze stops bleeding significantly faster than regular gauze',
+        ],
+        warnings: [
+            'A tourniquet applied correctly will be extremely painful — this is expected and necessary. Do not loosen it.',
+            'Do not remove a tourniquet in the field once applied to a life-threatening wound — only remove in a hospital',
+        ],
+        faqItems: [
+            {
+                id: 'faq-urban-medical-1',
+                question: 'Will applying a tourniquet cause amputation?',
+                answer: 'Tourniquets applied for under 2 hours very rarely cause permanent injury. The vast majority of tourniquet-related amputations result from the original injury, not the tourniquet. A tourniquet to save a life from massive bleeding is always the correct choice. Time is critical — get to a hospital as fast as possible.',
+                categoryId: 'urban',
+                tags: ['tourniquet', 'bleeding', 'trauma', 'first aid'],
+            },
+        ],
+        relatedIds: ['urban-emergency', 'zombie-medical'],
+    },
+    {
+        id: 'urban-comms',
+        categoryId: 'urban',
+        title: 'Emergency Communications When Cell Networks Fail',
+        summary: 'Cell towers become overwhelmed in major emergencies within minutes. During the 2013 Colorado floods, cellular networks failed completely. Knowing how to communicate before that happens is critical.',
+        difficulty: 'intermediate',
+        threatLevel: 'medium',
+        timeToRead: 6,
+        isPremium: false,
+        steps: [
+            { order: 1, action: 'Text before calling during network congestion', detail: 'During network congestion, SMS texts use far less bandwidth than voice calls and often get through when calls fail. Text your emergency contact first. Include your GPS location from your phone\'s Maps app.' },
+            { order: 2, action: 'NOAA Weather Radio — works when everything else fails', detail: 'A $30 battery-powered NOAA weather radio receives emergency broadcasts from federal transmitters that operate independently of the internet and cell network. The most reliable emergency information source during any Colorado disaster.' },
+            { order: 3, action: 'FRS/GMRS radios for local neighborhood communication', detail: 'Family Radio Service (FRS) radios ($40/pair) operate license-free within 1–2 miles. GMRS extends range to 5–10 miles with a $35 FCC license. Pre-coordinate channels with neighbors before an emergency. These work when all other networks fail.' },
+            { order: 4, action: '911 texts: available in most Colorado counties', detail: 'Most Colorado counties accept 911 text messages. Text your location (address or intersection), the nature of the emergency, and number of people involved. Call if you can, text if you can\'t.' },
+            { order: 5, action: 'Satellite communicators for remote areas', detail: 'Garmin inReach, SPOT, or Apple Emergency SOS via satellite allows SOS and messaging from anywhere with sky view, no cell service needed. Monthly plans start at $15. If you regularly travel in remote Colorado, this is a critical safety investment.' },
+        ],
+        tips: [
+            'Designate an out-of-state family contact as your check-in point — local calls are blocked while long-distance often gets through',
+            'Charge all devices before any forecast major storm',
+            'A car charger for your phone extends its usefulness by days during a grid-down event',
+        ],
+        warnings: [
+            'Social media and cell networks become unreliable in the first 30 minutes of a major urban emergency',
+            'Satellite messenger SOSs dispatch real rescue resources — only activate if you genuinely need help',
+        ],
+        faqItems: [
+            {
+                id: 'faq-urban-comms-1',
+                question: 'Should I get a HAM radio license for emergencies?',
+                answer: 'A Technician class HAM license ($15 fee, easy online exam) gives access to local repeater networks on independent power with high-power transmitters. During the 2013 Colorado floods, HAM operators provided critical communication when all other systems failed. It is a worthwhile investment for serious preparedness — see the zombie-comms guide for deep detail.',
+                categoryId: 'urban',
+                tags: ['HAM radio', 'communications', 'license', 'emergency'],
+            },
+        ],
+        relatedIds: ['urban-emergency', 'zombie-comms', 'zombie-grid-down'],
+    },
+    {
+        id: 'urban-evacuation',
+        categoryId: 'urban',
+        title: 'Urban Evacuation: Timing, Routes & What to Take',
+        summary: 'The difference between successful and failed evacuations is almost entirely about timing. Every hour you delay after an evacuation order multiplies traffic, resource competition, and risk.',
+        difficulty: 'beginner',
+        threatLevel: 'high',
+        timeToRead: 7,
+        isPremium: false,
+        steps: [
+            { order: 1, action: 'Leave at the voluntary notice, not the mandatory order', detail: 'Voluntary orders are issued when risk is present. Mandatory orders when it is imminent. Waiting for mandatory means leaving with everyone else — roads jam, gas runs out, accidents multiply. Leave at the voluntary notice and beat the exodus.' },
+            { order: 2, action: 'Know your routes before the emergency', detail: 'Every Colorado Front Range county publishes evacuation zone maps. Find yours now at your county OEM website. Know primary and alternate routes. Surface roads perpendicular to the obvious route often flow when I-25 and I-70 are gridlocked.' },
+            { order: 3, action: 'Pack a go-bag: grab in 10 minutes', detail: 'Pre-packed go-bag: 7-day medication supply, copies of critical documents in a waterproof bag, phone charger and battery bank, 3 days food and water, change of clothes, cash in small bills. Store near the door. When the order comes, grab and go.' },
+            { order: 4, action: 'Fuel strategy: never below half tank in storm season', detail: 'During an evacuation, gas stations empty in the first hour. Keep your tank above half from October through May. If an evacuation watch is issued, fill up immediately — before you need to leave.' },
+            { order: 5, action: 'Plan for pets before the emergency', detail: 'Most emergency shelters do not accept pets. Know your pet-friendly shelter options in advance (cdphe.colorado.gov). Carrier, food, medications, vaccination records for each animal. Contact boarding facilities immediately if you cannot take them — do not leave them unplanned.' },
+        ],
+        tips: [
+            'Colorado Ready (ready.colorado.gov) lists evacuation zones for every county — know your zone number now',
+            'A laminated card in your go-bag with all important phone numbers is essential — your phone may be dead or broken',
+            'Text 43362 (4FEMA) with your zip code to receive FEMA disaster information during evacuations',
+        ],
+        warnings: [
+            'Do not re-enter an evacuated area until authorities clear it — active hazards remain after the visible threat passes',
+            'Never drive around road closed barriers during evacuations — they indicate life-threatening hazards, not convenience restrictions',
+        ],
+        faqItems: [
+            {
+                id: 'faq-urban-evacuation-1',
+                question: 'What documents should I take in an evacuation?',
+                answer: 'Priority order: passports, IDs, insurance documents (home/auto/health), Social Security cards, birth certificates, financial account information, prescription information. Store digital copies in encrypted cloud storage accessible from any device. Keep physical copies in a waterproof bag in your go-bag.',
+                categoryId: 'urban',
+                tags: ['evacuation', 'documents', 'go-bag', 'preparation'],
+            },
+        ],
+        relatedIds: ['urban-emergency', 'urban-comms', 'plains-blizzard'],
+    },
+    {
+        id: 'urban-shelter-place',
+        categoryId: 'urban',
+        title: 'Advanced Shelter-in-Place: Smoke, Chemical & Nuclear Events',
+        summary: 'Standard wildfire smoke shelter-in-place is common knowledge. This premium guide covers the protocols for chemical spills, industrial accidents, and nuclear/radiological events — real scenarios in Colorado\'s industrial and military corridor.',
+        difficulty: 'advanced',
+        threatLevel: 'critical',
+        timeToRead: 10,
+        isPremium: true,
+        steps: [
+            { order: 1, action: 'Chemical/industrial event: immediate room sealing', detail: 'Colorado\'s I-25 and railroad corridors carry chlorine, ammonia, and hazardous materials. If a chemical release is announced: go inside immediately. Choose an interior room above ground level — most chemical vapors are heavier than air. Seal all gaps with tape and wet towels. Turn off all HVAC, fans, and fireplaces. Close fireplace dampers.' },
+            { order: 2, action: 'Improvised air filtration for vapor protection', detail: 'N95 masks filter particulates but NOT chemical vapors. For vapor protection: a water-soaked cloth over the face provides minimal but real protection for ammonia and water-soluble vapors. Activated carbon respirators ($25 at hardware stores) provide genuine chemical vapor protection and should be in every serious emergency kit.' },
+            { order: 3, action: 'Radiological event: distance, shielding, time', detail: 'The three factors in radiation protection: distance (doubling distance reduces dose by 75%), shielding (dense materials: concrete, earth, brick), and time (minimize exposure duration). For a radiological event: go inside immediately, go to the basement or interior room, maximize building material between you and the exterior.' },
+            { order: 4, action: 'Nuclear detonation: the first 24 hours are critical', detail: 'Modern nuclear emergency guidance (DHS "Planning Guidance for Response to a Nuclear Detonation") emphasizes shelter-in-place. Fallout peaks in the first 24 hours. Go inside, stay inside, stay tuned. A brick or concrete building reduces fallout radiation dose by 10x compared to open air. Sheltering inside saves lives.', warning: 'Cheyenne Mountain (NORAD) and multiple military installations make Colorado a higher-risk nuclear scenario location than average — understanding the basics is responsible.' },
+            { order: 5, action: 'Shelter vs evacuate for radiological events', detail: 'Shelter-in-place is preferred for the first 24 hours — roads are gridlocked and radioactive fallout is actively depositing. After 24 hours, official guidance will indicate evacuation windows. Leave with windows closed, ventilation off, most direct route away from the event. Potassium iodide (KI) only protects the thyroid from radioactive iodine specifically — it does not provide general radiation protection.' },
+        ],
+        tips: [
+            'FEMA\'s "Planning Guidance for Response to a Nuclear Detonation" (2022) is free online and provides the scientific basis for modern nuclear survival guidance',
+            'A quality activated carbon respirator ($25 at any hardware store) provides genuine chemical vapor protection that N95 masks do not',
+            'Cheyenne Mountain is 60 miles from Denver — understanding basic nuclear shelter protocols is not paranoid, it is responsible',
+        ],
+        warnings: [
+            'Do not attempt to evacuate during an active chemical release or in the first 24 hours of a nuclear event — shelter provides more protection than driving through contaminated air',
+            'Potassium iodide is not a radiation antidote — it only protects the thyroid from radioactive iodine specifically',
+        ],
+        faqItems: [
+            {
+                id: 'faq-urban-shelter-1',
+                question: 'Does my basement protect me from radiation?',
+                answer: 'Yes, significantly. A basement in a brick or concrete building reduces your radiation exposure from fallout by a factor of 40 compared to open air. Even a wood-frame house basement reduces it by a factor of 10. Every foot of earth or concrete between you and the exterior dramatically reduces dose. Go deep inside a substantial building immediately.',
+                categoryId: 'urban',
+                tags: ['nuclear', 'radiation', 'shelter', 'basement'],
+            },
+        ],
+        relatedIds: ['urban-emergency', 'urban-evacuation', 'zombie-grid-down'],
+    },
+]
+
+export const urbanQuiz: QuizQuestion[] = [
+    {
+        id: 'quiz-urban-1',
+        categoryId: 'urban',
+        question: 'An earthquake strikes while you are inside a building. What do you do?',
+        options: [
+            'Run to the nearest exit immediately',
+            'Stand in a doorway',
+            'Drop, Cover under a sturdy table or desk, Hold On until shaking stops',
+            'Run outside to open ground',
+        ],
+        correctIndex: 2,
+        explanation: 'Drop, Cover, Hold On is the earthquake safety standard. Running during an earthquake puts you at risk from falling debris and glass. The "doorway" myth dates to unreinforced adobe construction — modern doorways are no stronger than the rest of the structure. A sturdy desk or table provides critical overhead protection from falling objects.',
+        difficulty: 'beginner',
+    },
+]
