@@ -93,14 +93,14 @@ export default function ArticlePage({ params }: Props) {
                 )}
 
                 {/* Warnings */}
-                {article.warnings.length > 0 && (
+                {(article.warnings?.length ?? 0) > 0 && (
                     <section className="mb-10">
                         <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                             <AlertTriangle size={20} className="text-red-400" />
                             Critical Warnings
                         </h2>
                         <div className="space-y-3">
-                            {article.warnings.map((warning, i) => (
+                            {article.warnings!.map((warning, i) => (
                                 <div key={i} className="warning-box flex items-start gap-3">
                                     <AlertTriangle size={16} className="text-red-400 flex-shrink-0 mt-0.5" />
                                     <p className="text-sm leading-relaxed">{warning}</p>

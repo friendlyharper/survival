@@ -38,7 +38,7 @@ export interface Article {
     isPremium: boolean
     steps: Step[]
     tips: string[]
-    warnings: string[]
+    warnings?: string[]
     faqItems: FAQItem[]
     relatedIds: string[]     // other article ids
 }

@@ -61,7 +61,7 @@ export function searchContent(query: string): SearchResult[] {
                 a.title.toLowerCase().includes(q) ||
                 a.summary.toLowerCase().includes(q) ||
                 a.tips.some((t) => t.toLowerCase().includes(q)) ||
-                a.warnings.some((w) => w.toLowerCase().includes(q))
+                (a.warnings ?? []).some((w) => w.toLowerCase().includes(q))
         )
         .map((a) => ({
             type: 'article' as const,
